@@ -99,6 +99,16 @@ const checkTree = bstree => {
   insert(root, 7);
   insert(root, 12);
   checkTree(root);
+
+  // .find
+  assert.equal(find(root, 7).value, 7);
+  assert.equal(find(root, 999) === undefined, true);
+
+  // .findRecursively
+  assert.equal(findRecursively(root, 7).value, 7);
+  assert.equal(findRecursively(root, 999) === undefined, true);
+
+  checkTree(root);
 }
 
 {
@@ -111,10 +121,14 @@ const checkTree = bstree => {
   insertRecursively(root, 7);
   insertRecursively(root, 12);
   checkTree(root);
-  // find
+
+  // .find
   assert.equal(find(root, 7).value, 7);
   assert.equal(find(root, 999) === undefined, true);
-  // findRecursively
+
+  // .findRecursively
   assert.equal(findRecursively(root, 7).value, 7);
   assert.equal(findRecursively(root, 999) === undefined, true);
+
+  checkTree(root);
 }
